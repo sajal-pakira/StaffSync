@@ -56,7 +56,7 @@ const Admin = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100">
-      <div className="max-w-screen-xl mx-auto p-8">
+      <div className="max-w-7xl mx-auto p-8">
         <div className="flex gap-8">
           {/* Sidebar */}
           <aside className="w-64 hidden md:block">
@@ -216,7 +216,7 @@ const Admin = () => {
                 <div className="rounded-xl bg-slate-800/60 border border-slate-700 p-6">
                   <h3 className="text-lg font-medium mb-3">Quick actions</h3>
                   <div className="flex flex-col gap-3">
-                    <Link to={"/admin/create-task"}>
+                    <Link to={"/create-task"}>
                       <button className="w-full py-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-medium">
                         Create task
                       </button>
