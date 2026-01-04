@@ -1,6 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const CreateTask = () => {
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    console.log("Form submitted successfuly");
+  };
+
+  const [title, setTitle] = useState("");
+  const [assignee, setAssignee] = useState("");
+  const [date, setDate] = useState("");
+
   return (
     <div className="min-h-screen bg-black">
       <div className="text-black max-w-7xl mx-auto p-5">
@@ -37,12 +48,22 @@ const CreateTask = () => {
           <main className="lg:col-span-2 rounded-xl bg-slate-800/60 border border-slate-700 p-6">
             <h2 className="text-xl font-medium text-slate-100">Task details</h2>
 
-            <form className="mt-5 grid grid-cols-1 gap-4">
+            <form
+              onSubmit={(e) => {
+                submitHandler(e);
+              }}
+              className="mt-5 grid grid-cols-1 gap-4"
+            >
               <div>
                 <label className="text-md text-slate-300 mb-1 block">
                   Title
                 </label>
                 <input
+                  name="title"
+                  value={title}
+                  onChange={(e) => {
+                    setTitle(e.target.value);
+                  }}
                   placeholder="e.g. Prepare monthly report"
                   className="w-full px-3 py-2 rounded-lg bg-slate-700 text-slate-100 border border-slate-600 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
                 />
@@ -61,6 +82,11 @@ const CreateTask = () => {
                     <option>Priya</option>
                   </select> */}
                   <input
+                    name="assignee"
+                    onChange={(e) => {
+                      setAssignee(e.target.value);
+                    }}
+                    value={assignee}
                     placeholder="Enter Assignee"
                     className="w-full px-3 py-2 rounded-lg bg-slate-700 text-slate-100 border border-slate-600 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
                   />
@@ -71,6 +97,11 @@ const CreateTask = () => {
                     Due date
                   </label>
                   <input
+                    name="due"
+                    onChange={(e) => {
+                      setDate(e.target.value);
+                    }}
+                    value={date}
                     type="date"
                     placeholder=""
                     className="w-full px-3 py-2 rounded-lg bg-slate-700 text-slate-100 border border-slate-600 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 text-md"
@@ -83,7 +114,10 @@ const CreateTask = () => {
                   <label className="text-md text-slate-300 mb-1 block">
                     Priority
                   </label>
-                  <select className="w-full px-3 py-2 rounded-lg bg-slate-700 text-slate-100 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-400">
+                  <select
+                    name="priority"
+                    className="w-full px-3 py-2 rounded-lg bg-slate-700 text-slate-100 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                  >
                     <option>Normal</option>
                     <option>High</option>
                     <option>Low</option>
@@ -107,46 +141,37 @@ const CreateTask = () => {
                   Details
                 </label>
                 <textarea
+                  name="details"
                   rows={2}
                   placeholder="Notes, steps, links, and acceptance criteria"
                   className="w-full px-3 py-2 rounded-lg bg-slate-700 text-slate-100 border border-slate-600 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
                 />
               </div>
 
-              <div className="flex items-center justify-end gap-3">
-                <button
-                  type="button"
-                  className="py-2 px-4 rounded-lg border border-slate-700 hover:bg-slate-700 text-slate-100"
-                >
-                  Reset
-                </button>
-                <button
-                  type="button"
-                  className="py-2 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-medium"
-                >
-                  Create task
-                </button>
-              </div>
+              <button
+                type="submit"
+                className="py-2 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-medium"
+              >
+                Create task
+              </button>
             </form>
           </main>
 
           {/* Side panel */}
-          <aside className="rounded-xl bg-slate-800/60 border border-slate-700 p-6 text-sm text-slate-400">
+          <aside className="rounded-xl bg-slate-800/60 border border-slate-700 p-6 text-md text-slate-400">
             <h4 className="text-slate-100 font-medium">Preview</h4>
             <div className="mt-4 p-4 rounded-lg bg-slate-900 border border-slate-700 text-slate-100">
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-sm text-slate-400">Title</div>
-                  <div className="mt-1 font-semibold">
-                    Prepare monthly report
-                  </div>
+                  <div className="mt-1 font-semibold">{title}</div>
                 </div>
-                <div className="text-xs text-slate-400">Jan 12</div>
+                <div className="text-xs text-slate-400">{date}</div>
               </div>
 
               <div className="mt-3 text-sm text-slate-300">
                 Assignee:{" "}
-                <span className="text-slate-100 font-medium">Maya</span>
+                <span className="text-slate-100 font-medium">{assignee}</span>
               </div>
               <div className="mt-2 flex items-center gap-2">
                 <span className="px-2 py-1 rounded-full bg-emerald-500 text-slate-900 text-xs">
@@ -164,8 +189,6 @@ const CreateTask = () => {
                 <li>Use the details section for steps and links</li>
               </ul>
             </div>
-
-           
           </aside>
         </div>
       </div>
