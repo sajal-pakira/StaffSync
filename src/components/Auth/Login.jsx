@@ -1,10 +1,15 @@
+import { useState } from "react";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
+    console.log("Email is ", email);
+    console.log("Password is ", password);
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -49,6 +54,10 @@ const Login = () => {
               </svg>
             </span>
             <input
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
               required
               aria-label="Email"
               className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 transition bg-white"
@@ -83,6 +92,10 @@ const Login = () => {
               </svg>
             </span>
             <input
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
               required
               aria-label="Password"
               className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 transition bg-white"
