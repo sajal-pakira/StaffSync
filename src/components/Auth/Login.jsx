@@ -1,6 +1,10 @@
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log("Form submitted");
   };
 
   return (
@@ -45,6 +49,7 @@ const Login = () => {
               </svg>
             </span>
             <input
+              required
               aria-label="Email"
               className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 transition bg-white"
               type="email"
@@ -78,6 +83,7 @@ const Login = () => {
               </svg>
             </span>
             <input
+              required
               aria-label="Password"
               className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 transition bg-white"
               type="password"
