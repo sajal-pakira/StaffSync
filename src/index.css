@@ -4,7 +4,10 @@
   /* color: #fff; */
 }
 
-
 body {
-  background-color: #111;
+  /* background-color: #111; */
+}
+
+#tasklist::-webkit-scrollbar {
+  display: none;
 }
