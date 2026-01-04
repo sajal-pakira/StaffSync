@@ -87,7 +87,7 @@ const CreateTask = () => {
                       setAssignee(e.target.value);
                     }}
                     value={assignee}
-                    placeholder="Enter Assignee"
+                    placeholder="Employee name"
                     className="w-full px-3 py-2 rounded-lg bg-slate-700 text-slate-100 border border-slate-600 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
                   />
                 </div>
