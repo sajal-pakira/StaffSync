@@ -1,4 +1,4 @@
-const AllTasks = () => {
+const TaskTypes = () => {
   return (
     <div className="w-full flex justify-between mt-10 gap-5">
       <div className="py-6 px-9 w-[45%] bg-red-400 rounded-xl">
@@ -21,4 +21,4 @@ const AllTasks = () => {
   );
 };
 
-export default AllTasks;
+export default TaskTypes;
