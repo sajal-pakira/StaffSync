@@ -4,6 +4,7 @@ import Employee from "./components/Dashboard/Employee";
 import Admin from "./components/Dashboard/Admin";
 import Signup from "./components/Auth/Signup";
 import CreateTask from "./pages/CreateTask";
+import AllTasks from "./components/TaskList/AllTasks";
 
 const App = () => {
   return (
@@ -12,8 +13,9 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Employee />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/create-task" element={<CreateTask />} />
+        <Route path="/admin/dashboard" element={<Admin />} />
+        <Route path="/admin/create-task" element={<CreateTask />} />
+        <Route path="/admin/tasks" element={<AllTasks />} />
       </Routes>
     </>
   );

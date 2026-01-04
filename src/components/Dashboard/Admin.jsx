@@ -84,12 +84,14 @@ const Admin = () => {
                 >
                   Users
                 </a>
-                <a
-                  className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-700"
-                  href="#"
-                >
-                  Tasks
-                </a>
+                
+                  <Link
+                    className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-700"
+                    to={"/admin/tasks"}
+                  >
+                    Tasks
+                  </Link>
+                
                 <a
                   className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-700"
                   href="#"
@@ -216,7 +218,7 @@ const Admin = () => {
                 <div className="rounded-xl bg-slate-800/60 border border-slate-700 p-6">
                   <h3 className="text-lg font-medium mb-3">Quick actions</h3>
                   <div className="flex flex-col gap-3">
-                    <Link to={"/create-task"}>
+                    <Link to={"/admin/create-task"}>
                       <button className="w-full py-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-medium">
                         Create task
                       </button>

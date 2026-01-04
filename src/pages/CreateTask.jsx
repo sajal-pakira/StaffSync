@@ -19,7 +19,7 @@ const CreateTask = () => {
         <div className="mb-6 flex items-center justify-between">
           <div className="w-2/3">
             <nav className="text-sm text-slate-400 mb-2">
-              <Link to="/admin" className="hover:underline text-slate-400">
+              <Link to="/admin/dashboard" className="hover:underline text-slate-400">
                 Dashboard
               </Link>
               <span className="mx-2 text-slate-600">/</span>
