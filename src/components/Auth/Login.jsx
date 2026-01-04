@@ -13,7 +13,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-950 to-black p-6">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 via-slate-950 to-black p-6">
       <div className="w-full max-w-md bg-slate-800/90 backdrop-blur border border-slate-700 rounded-2xl shadow-lg p-8 text-slate-100">
         <div className="flex flex-col items-center mb-6">
           <div className="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center text-white text-2xl font-bold shadow-md">
