@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 
-const TaskContext = ({ children }) => {
+const AuthProvider = ({ children }) => {
   return <div>{children}</div>;
 };
 
-TaskContext.propTypes = {
+AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default TaskContext;
+export default AuthProvider;
