@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const AllTasks = () => {
   const tasks = [
     {
@@ -89,9 +91,11 @@ const AllTasks = () => {
               placeholder="Search tasks or assignees"
               className="px-3 py-2 rounded-lg bg-slate-700 text-slate-100 border border-slate-600 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
             />
-            <button className="px-3 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-medium">
-              New task
-            </button>
+            <Link to={"/admin/create-task"}>
+              <button className="px-3 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-medium">
+                New task
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -118,7 +122,10 @@ const AllTasks = () => {
           </div>
         </div>
 
-        <div id="tasks" className="rounded-xl bg-slate-800/60 border border-slate-700 p-4 overflow-auto h-96">
+        <div
+          id="tasks"
+          className="rounded-xl bg-slate-800/60 border border-slate-700 p-4 overflow-auto h-96"
+        >
           <div className="h-full">
             <table className="w-full table-auto">
               <thead>
