@@ -32,6 +32,38 @@ const AllTasks = () => {
       priority: "Low",
       status: "Completed",
     },
+    {
+      id: 1,
+      title: "Prepare monthly report",
+      assignee: "Maya",
+      due: "Jan 12",
+      priority: "Normal",
+      status: "Open",
+    },
+    {
+      id: 2,
+      title: "Sync payroll data",
+      assignee: "Alex",
+      due: "Jan 10",
+      priority: "High",
+      status: "In Progress",
+    },
+    {
+      id: 3,
+      title: "Resolve ticket #455",
+      assignee: "Priya",
+      due: "Jan 9",
+      priority: "High",
+      status: "Overdue",
+    },
+    {
+      id: 4,
+      title: "Onboard contractor",
+      assignee: "Jordan",
+      due: "Jan 18",
+      priority: "Low",
+      status: "Completed",
+    },
   ];
 
   const statusClass = (s) => {
@@ -86,8 +118,8 @@ const AllTasks = () => {
           </div>
         </div>
 
-        <div className="rounded-xl bg-slate-800/60 border border-slate-700 p-4">
-          <div className="overflow-auto">
+        <div id="tasks" className="rounded-xl bg-slate-800/60 border border-slate-700 p-4 overflow-auto h-96">
+          <div className="h-full">
             <table className="w-full table-auto">
               <thead>
                 <tr className="text-sm text-slate-400 text-left">
