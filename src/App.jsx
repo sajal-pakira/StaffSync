@@ -5,8 +5,14 @@ import Admin from "./components/Dashboard/Admin";
 import Signup from "./components/Auth/Signup";
 import CreateTask from "./pages/CreateTask";
 import AllTasks from "./components/TaskList/AllTasks";
+import { useEffect } from "react";
+import { setLocalStorage } from "./utils/LocalStorage";
 
 const App = () => {
+  useEffect(() => {
+    setLocalStorage();
+  }, []);
+
   return (
     <>
       <Routes>

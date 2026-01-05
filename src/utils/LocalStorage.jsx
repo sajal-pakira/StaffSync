@@ -1,5 +1,248 @@
-const LocalStorage = () => {
-  return <div>LocalStorage</div>;
-};
+const employees = [
+  {
+    id: 1,
+    email: "e1@example.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Update Website Homepage",
+        category: "Design",
+        description: "Revamp the homepage banner and update the font styles.",
+        date: "2024-02-20",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Fix Login Bug",
+        category: "Development",
+        description:
+          "Resolve the issue preventing users from logging in via mobile.",
+        date: "2024-02-18",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        title: "Client Meeting",
+        category: "Meeting",
+        description: "Present the initial wireframes to the client.",
+        date: "2024-02-15",
+      },
+    ],
+  },
+  {
+    id: 2,
+    email: "employee2@example.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        title: "Database Optimization",
+        category: "Database",
+        description: "Optimize queries to improve load times on the dashboard.",
+        date: "2024-02-21",
+      },
+      {
+        active: false,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Design New Logo",
+        category: "Design",
+        description: "Create 3 variations of the new company logo.",
+        date: "2024-02-22",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Code Review",
+        category: "Development",
+        description:
+          "Review the pull request for the payment gateway integration.",
+        date: "2024-02-19",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Server Maintenance",
+        category: "IT",
+        description: "Perform scheduled maintenance on the production server.",
+        date: "2024-02-10",
+      },
+    ],
+  },
+  {
+    id: 3,
+    email: "employee3@example.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Social Media Campaign",
+        category: "Marketing",
+        description: "Schedule posts for the upcoming product launch.",
+        date: "2024-02-23",
+      },
+      {
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        title: "Write Blog Post",
+        category: "Content",
+        description: "Write a technical article about the new AI features.",
+        date: "2024-02-22",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Update Documentation",
+        category: "Documentation",
+        description:
+          "Update the API documentation to reflect version 2.0 changes.",
+        date: "2024-02-15",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        title: "Competitor Analysis",
+        category: "Research",
+        description: "Analyze the pricing strategy of top 3 competitors.",
+        date: "2024-02-14",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Prepare Monthly Report",
+        category: "Reporting",
+        description:
+          "Compile analytics data for the monthly stakeholder meeting.",
+        date: "2024-02-01",
+      },
+    ],
+  },
+  {
+    id: 4,
+    email: "employee4@example.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Onboard New Intern",
+        category: "HR",
+        description:
+          "Set up accounts and introduce the new intern to the team.",
+        date: "2024-02-24",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Payroll Processing",
+        category: "Finance",
+        description: "Process salaries for the month of January.",
+        date: "2024-02-05",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Tax Filing",
+        category: "Finance",
+        description: "Submit quarterly tax documents.",
+        date: "2024-01-15",
+      },
+    ],
+  },
+  {
+    id: 5,
+    email: "employee5@example.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        title: "QA Testing",
+        category: "Testing",
+        description: "Run regression tests on the staging environment.",
+        date: "2024-02-21",
+      },
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Security Audit",
+        category: "Security",
+        description:
+          "Check for vulnerabilities in the new authentication module.",
+        date: "2024-02-25",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Team Lunch",
+        category: "Event",
+        description: "Organize the team lunch event.",
+        date: "2024-02-14",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        title: "Load Testing",
+        category: "Testing",
+        description: "Simulate 10,000 users. Failed due to server timeout.",
+        date: "2024-02-12",
+      },
+    ],
+  },
+];
 
-export default LocalStorage;
+const admin = [
+  {
+    id: 1,
+    email: "admin@example.com",
+    password: "123",
+  },
+];
+
+export const setLocalStorage = () => {
+  localStorage.setItem("Employees", JSON.stringify(employees));
+};
+export const getLocalStorage = () => {
+  localStorage.getItem();
+};
