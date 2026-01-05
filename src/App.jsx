@@ -6,11 +6,12 @@ import Signup from "./components/Auth/Signup";
 import CreateTask from "./pages/CreateTask";
 import AllTasks from "./components/TaskList/AllTasks";
 import { useEffect } from "react";
-import { setLocalStorage } from "./utils/LocalStorage";
+import { getLocalStorage, setLocalStorage } from "./utils/LocalStorage";
 
 const App = () => {
   useEffect(() => {
     setLocalStorage();
+    getLocalStorage();
   }, []);
 
   return (
