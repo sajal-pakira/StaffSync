@@ -10,16 +10,27 @@ import { getLocalStorage, setLocalStorage } from "./utils/LocalStorage";
 import { AuthContext } from "./context/AuthProvider";
 
 const App = () => {
+  const authData = useContext(AuthContext);
+
   useEffect(() => {
     setLocalStorage();
     getLocalStorage();
   }, []);
 
+  useEffect(() => {
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (loggedInUser) {
+      setUser(loggedInUser.role);
+    }
+  }, []);
+
   const [user, setUser] = useState(null);
-  const authData = useContext(AuthContext);
 
   const handleLogin = (email, password) => {
-    if (email == "admin@me.com" && password == "123") {
+    if (
+      authData &&
+      authData.adminData.find((e) => e.email == email && e.password == password)
+    ) {
       setUser("admin");
       localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
     } else if (
