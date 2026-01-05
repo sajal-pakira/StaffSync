@@ -5,8 +5,9 @@ import Admin from "./components/Dashboard/Admin";
 import Signup from "./components/Auth/Signup";
 import CreateTask from "./pages/CreateTask";
 import AllTasks from "./components/TaskList/AllTasks";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getLocalStorage, setLocalStorage } from "./utils/LocalStorage";
+import { AuthContext } from "./context/AuthProvider";
 
 const App = () => {
   useEffect(() => {
@@ -25,6 +26,9 @@ const App = () => {
       alert("Invalid Credentials!!");
     }
   };
+
+  const data = useContext(AuthContext);
+  console.log(data);
 
   return (
     <>
