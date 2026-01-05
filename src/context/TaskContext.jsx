@@ -1,9 +1,5 @@
+const TaskContext = ({ children }) => {
+  return <div>{children}</div>;
+};
 
-
-const TaskContext = () => {
-  return (
-    <div>TaskContext</div>
-  )
-}
-
-export default TaskContext
+export default TaskContext;
