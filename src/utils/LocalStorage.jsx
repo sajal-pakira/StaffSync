@@ -244,10 +244,10 @@ export const setLocalStorage = () => {
   localStorage.setItem("Employees", JSON.stringify(employees));
   localStorage.setItem("Admin", JSON.stringify(admin));
 };
+
 export const getLocalStorage = () => {
-  const empData=localStorage.getItem("Employees");
+  const empData = localStorage.getItem("Employees");
   console.log(JSON.parse(empData));
-  const admData=localStorage.getItem("Admin");
+  const admData = localStorage.getItem("Admin");
   console.log(JSON.parse(admData));
-  
 };

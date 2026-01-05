@@ -84,14 +84,14 @@ const Admin = () => {
                 >
                   Users
                 </a>
-                
-                  <Link
-                    className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-700"
-                    to={"/admin/tasks"}
-                  >
-                    Tasks
-                  </Link>
-                
+
+                <Link
+                  className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-700"
+                  to={"/admin/tasks"}
+                >
+                  Tasks
+                </Link>
+
                 <a
                   className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-700"
                   href="#"

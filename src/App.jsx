@@ -5,7 +5,7 @@ import Admin from "./components/Dashboard/Admin";
 import Signup from "./components/Auth/Signup";
 import CreateTask from "./pages/CreateTask";
 import AllTasks from "./components/TaskList/AllTasks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getLocalStorage, setLocalStorage } from "./utils/LocalStorage";
 
 const App = () => {
@@ -14,16 +14,32 @@ const App = () => {
     getLocalStorage();
   }, []);
 
+  const [user, setUser] = useState(null);
+
+  const handleLogin = (email, password) => {
+    if (email == "admin@me.com" && password == "123") {
+      setUser("admin");
+      console.log(user);
+    } else if (email == "user@me.com" && password == "123") {
+      setUser("employee");
+      console.log(user);
+    } else {
+      alert("Invalid Credentials!!");
+    }
+  };
+
   return (
     <>
-      <Routes>
-        <Route path="/login" element={<Login />} />
+      {!user && <Login handleLogin={handleLogin} />}
+      {user == "admin" ? <Admin /> : <Employee />}
+      {/* <Routes>
+        <Route path="/login" element={<Login handleLogin={handleLogin} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Employee />} />
         <Route path="/admin/dashboard" element={<Admin />} />
         <Route path="/admin/create-task" element={<CreateTask />} />
         <Route path="/admin/tasks" element={<AllTasks />} />
-      </Routes>
+      </Routes> */}
     </>
   );
 };
