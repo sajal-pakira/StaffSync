@@ -46,7 +46,7 @@ const AllTasks = () => {
       <div className="max-w-7xl mx-auto p-8">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-2xl font-semibold text-slate-100">All tasks</h2>
+            <h2 className="text-3xl font-semibold text-slate-100">All tasks</h2>
             <p className="text-sm text-slate-400 mt-1">
               Overview of all tasks across teams
             </p>
@@ -107,15 +107,9 @@ const AllTasks = () => {
                       <div className="text-slate-100 font-medium">
                         {t.title}
                       </div>
-                      <div className="text-sm text-slate-400">
-                        #{t.id} — quick note
-                      </div>
                     </td>
                     <td className="py-3">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-slate-100 font-semibold">
-                          {t.assignee[0]}
-                        </div>
                         <div className="text-sm text-slate-100">
                           {t.assignee}
                         </div>
